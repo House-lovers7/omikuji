@@ -1,7 +1,6 @@
 module Api
   module V1
     class OmikujiController < ApplicationController
-
       def index
       require 'spreadsheet'
       Spreadsheet.client_encoding = 'UTF-8'
@@ -30,12 +29,11 @@ module Api
                 illness: ws.row(row_index)[15],
                 marriage_proposal: ws.row(row_index)[16]
       }
-    end
+     end
 
         render json:
           omikuji_params,  status: :ok
-
+        end
+      end
+    end
   end
-end
-end
-end
